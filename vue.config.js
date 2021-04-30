@@ -19,7 +19,7 @@ module.exports = {
 		// 开启 CSS source maps，一般不建议开启
         sourceMap: false,
         // 为所有的 CSS 及其预处理文件开启 CSS Modules
-        modules: false,
+        // modules: false,
         // 这个选项不会影响 `*.vue` 文件
         requireModuleExtension: true
     },
