@@ -117,9 +117,9 @@
                 box-shadow: 0px 3px 21px 0px rgba(125, 125, 125, 0.3);
                 .title {
                     width: 100%;
-                    height: 25px;
+                    height: 30px;
                     font-weight: 500;
-                    line-height: 25px;
+                    line-height: 30px;
                     background-color: #D1D1D1;
                     &.ongoing {
                         background-color: #B29873;

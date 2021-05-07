@@ -61,13 +61,16 @@
 </template>
 
 <script>
-
+    import { useRouter } from "vue-router"
     import { defineComponent, defineAsyncComponent, ref, reactive, toRefs, provide, onMounted } from 'vue'
     import { matchScreen, gameList, tournamentList, teamList } from "@/scripts/request"
     import { List } from 'vant'
 
     export default defineComponent({
         setup(props,ctx) {
+
+            const router = useRouter()
+            
             const selectData = reactive({
                 selectList: [
                     {
