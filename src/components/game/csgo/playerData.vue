@@ -1,7 +1,7 @@
 <template>
     <div class="player">
+        <div class="title">选手数据</div>
         <div v-if="battleId&&teamList.length>0">
-            <TitleView :titleName="name" />
             <table v-for="item in teamList" :key="item.team_id">
                 <thead>
                     <th class="team">
@@ -25,7 +25,7 @@
                         <td>{{key.kills || 0}}({{key.headshot_kills || 0}})</td>
                         <td>{{key.assists || 0}}({{key.flash_assists || 0}})</td>
                         <td>{{key.deaths || 0}}</td>
-                        <td>{{(key.kast*100).toFixed(2) || 0}}%</td>
+                        <td>{{parseInt(key.kast*100) || 0}}%</td>
                         <td>{{parseInt(key.kills - key.deaths) || 0}}</td>
                         <td>{{key.adr || 0}}</td>
                         <td>{{key.first_kills_diff || 0}}</td>
@@ -40,13 +40,12 @@
 <script>
 
     import { csgoPlayerInfo } from "@/scripts/request"
-    import { defineComponent, defineAsyncComponent, reactive, toRefs, inject, watch, onMounted, onUnmounted } from 'vue'
+    import { defineComponent, reactive, toRefs, inject, watch, onMounted, onUnmounted } from 'vue'
     import { useRouter } from "vue-router"
 
     export default defineComponent({
         setup(props,ctx) {
             const playerData = reactive({
-                name: '选手数据',
                 battleId: 0,
                 teamList: [],
                 timer: null,
@@ -103,15 +102,17 @@
                 getplayerData,
                 gotoLink
             }
-        },
-        components: {
-            TitleView: defineAsyncComponent(() => import('@/components/common/title/title')) // 页面标题
         }
     })
 </script>
 
 <style lang="less" scoped>
     .player {
+        .title {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 30px 0 20px;
+        }
         table {
             width: 100%;
             font-size: 16px;

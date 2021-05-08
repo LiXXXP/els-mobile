@@ -1,8 +1,7 @@
 <template>
     <div class="play-map">
-        <TitleView :titleName="mapName" />
+        <div class="title">地图信息</div>
         <div class="info">
-
             <div class="map-tab flex flex_end">
                 <div v-for="(item,index) in mapNav"
                     :key="item.name"
@@ -10,24 +9,7 @@
                     @click="currentIndex = index"
                 >{{item.name}}</div>
             </div>
-
             <div class="map-bp flex flex_only_center" v-if="currentIndex===0">
-
-                <div class="team">
-                    <div class="master flex flex_only_center">
-                        <img :src="masterTeam.team_image">
-                        <p class="beyond-ellipsis" :title="masterTeam.team_name">
-                            {{masterTeam.team_name}}
-                        </p>
-                    </div>
-                    <div class="guest flex flex_only_center">
-                        <img :src="guestTeam.team_image">
-                        <p class="beyond-ellipsis" :title="guestTeam.team_name">
-                            {{guestTeam.team_name}}
-                        </p>
-                    </div>
-                </div>
-
                 <div class="map flex flex_only_center">
                     <div class="map-item" v-for="item in mapInfo" :key="item.map_id">
                         <div class="block">
@@ -37,27 +19,24 @@
                         <p class="text">{{item.map_short_name}}</p>
                     </div>
                 </div>
-
             </div>
-
             <div v-else class="map-fight flex flex_only_center">
                 <img v-for="item in mapInfo"
                     :key="item.map_id"
                     :src="item.map_thumbnail">
             </div>
-
         </div>
     </div>
 </template>
 
 <script>
 
-    import { defineComponent, defineAsyncComponent, reactive, toRefs, ref, inject, watch } from 'vue'
+    import { defineComponent, reactive, toRefs, inject, watch } from 'vue'
 
     export default defineComponent({
         setup(props,ctx) {
+
             const mapData = reactive({
-                mapName: '地图信息',
                 currentIndex: 0,   // 当前index
                 mapNav: [          // 地图切换导航
                     {
@@ -69,41 +48,40 @@
                 ],
                 mapInfo: []
             })
-            const masterTeam = ref({})
-            const guestTeam = ref({})
+
             const gameData = inject('detail')
             watch(gameData, () => {
-                masterTeam.value = gameData.gameDetail.teams_info.master_team_info
-                guestTeam.value = gameData.gameDetail.teams_info.guest_team_info
                 mapData.mapInfo = gameData.gameDetail.map_info
             })
+
             return {
-                ...toRefs(mapData),
-                masterTeam,
-                guestTeam,
-                gameData
+                ...toRefs(mapData)
             }
-        },
-        components: {
-            TitleView: defineAsyncComponent(() => import('@/components/common/title/title')) // 页面标题
         }
     })
 </script>
 
 <style lang="less" scoped>
     .play-map {
+        padding: 0 20px;
+        margin-bottom: 30px;
+        .title {
+            font-size: 30px;
+            font-weight: 600;
+        }
         .info {
-            margin-top: -25px;
             .map-tab {
+                margin-top: -40px;
+                margin-bottom: 55px;
                 div {
-                    width: 80px;
-                    height: 25px;
+                    width: 100px;
+                    height: 30px;
                     color: #999;
-                    cursor: pointer;
+                    font-size: 16px;
                     margin-left: 10px;
-                    line-height: 25px;
+                    line-height: 30px;
                     text-align: center;
-                    border-radius: 13px;
+                    border-radius: 5px;
                     background-color: #D2D2D2;
                     &.active {
                         color: #fff;
@@ -112,31 +90,17 @@
                 }
             }
             .map-bp {
-                .team {
-                    margin-right: 30px;
-                    img {
-                        width: 35px;
-                        height: 35px;
-                        margin-right: 10px;
-                    }
-                    p {
-                        width: 60px;
-                        color:#333;
-                    }
-                    .guest {
-                        margin-top: 100px;
-                    }
-                }
                 .map {
                     .map-item {
-                        margin-right: 7px;
+                        margin-right: 15px;
                         position: relative;
                         &:last-child {
                             margin-right: 0;
                         }
                         .block {
-                            width: 130px;
-                            height: 75px;
+                            width: 138px;
+                            height: 80px;
+                            border-radius: 5px;
                             position: relative;
                             &:after,
                             &:before {
@@ -221,11 +185,14 @@
                 }
             }
             .map-fight {
-                height: 170px;
                 img {
-                    width: 156px;
-                    height: 100px;
-                    margin-left: 30px;
+                    width: 138px;
+                    height: 80px;
+                    margin-left: 15px;
+                    border-radius: 5px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
                 }
             }
         }

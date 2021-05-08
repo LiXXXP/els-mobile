@@ -1,10 +1,9 @@
 <template>
     <div class="play-kill">
         <div v-if="battleId">
-            <TitleView :titleName="mapName" />
-            <div class="map flex flex_center" v-if="teamsData.length>0">
+            <div class="map flex flex_around" v-if="teamsData.length>0">
 
-                <div class="arms flex flex_center">
+                <div class="arms flex flex_column flex_center">
                     <div v-for="item in armsList" 
                         :key="item.type" 
                         :class="{back: detailData[item.type].team_id !== teamsData[0].team_id}">
@@ -48,7 +47,7 @@
                     </div>
                 </div>
 
-                <div class="arms flex flex_center">
+                <div class="arms flex flex_column flex_center">
                     <div v-for="item in armsList"
                         :key="item.type" 
                         :class="{back: detailData[item.type].team_id !== teamsData[1].team_id}">
@@ -92,15 +91,15 @@
                             </td>
                             <td v-for="item in roundDetail" :key="item">
                                 <div class="icon">
-                                    <img src="../../../../assets/imgs/game/csgo/ct01.png" 
+                                    <img src="../../../assets/imgs/csgo/ct01.png" 
                                     v-if="item.win_type === 'cts_win' && item.winner === item.side[0].team_id">
-                                    <img src="../../../../assets/imgs/game/csgo/ct02.png" 
+                                    <img src="../../../assets/imgs/csgo/ct02.png" 
                                     v-if="item.win_type === 'bomb_defused' && item.winner === item.side[0].team_id">
-                                    <img src="../../../../assets/imgs/game/csgo/ct03.png" 
+                                    <img src="../../../assets/imgs/csgo/ct03.png" 
                                     v-if="item.win_type === 'target_saved' && item.winner === item.side[0].team_id">
-                                    <img src="../../../../assets/imgs/game/csgo/t01.png" 
+                                    <img src="../../../assets/imgs/csgo/t01.png" 
                                     v-if="item.win_type === 'target_bombed' && item.winner === item.side[0].team_id">
-                                    <img src="../../../../assets/imgs/game/csgo/t02.png" 
+                                    <img src="../../../assets/imgs/csgo/t02.png" 
                                     v-if="item.win_type === 'terrorists_win' && item.winner === item.side[0].team_id">
                                 </div>
                             </td>
@@ -120,15 +119,15 @@
                             </td>
                             <td v-for="item in roundDetail" :key="item">
                                 <div class="icon">
-                                    <img src="../../../../assets/imgs/game/csgo/ct01.png" 
+                                    <img src="../../../assets/imgs/csgo/ct01.png" 
                                     v-if="item.win_type === 'cts_win' && item.winner === item.side[1].team_id">
-                                    <img src="../../../../assets/imgs/game/csgo/ct02.png" 
+                                    <img src="../../../assets/imgs/csgo/ct02.png" 
                                     v-if="item.win_type === 'bomb_defused' && item.winner === item.side[1].team_id">
-                                    <img src="../../../../assets/imgs/game/csgo/ct03.png" 
+                                    <img src="../../../assets/imgs/csgo/ct03.png" 
                                     v-if="item.win_type === 'target_saved' && item.winner === item.side[1].team_id">
-                                    <img src="../../../../assets/imgs/game/csgo/t01.png" 
+                                    <img src="../../../assets/imgs/csgo/t01.png" 
                                     v-if="item.win_type === 'target_bombed' && item.winner === item.side[1].team_id">
-                                    <img src="../../../../assets/imgs/game/csgo/t02.png" 
+                                    <img src="../../../assets/imgs/csgo/t02.png" 
                                     v-if="item.win_type === 'terrorists_win' && item.winner === item.side[1].team_id">
                                 </div>
                             </td>
@@ -175,7 +174,6 @@
                     <p class="bar red"></p>
                     <p class="text red">被爆头</p>
                 </div>
-                <div class="hide">隐藏阵亡详情</div>
             </div>
         </div>
     </div>
@@ -183,7 +181,7 @@
 
 <script>
 
-    import { defineComponent, defineAsyncComponent, reactive, toRefs, inject, watch, onUnmounted, onMounted } from 'vue'
+    import { defineComponent, reactive, toRefs, inject, watch, onUnmounted, onMounted } from 'vue'
     import { useRoute, useRouter } from "vue-router"
     import { battleDetail } from "@/scripts/request"
 
@@ -191,18 +189,17 @@
         setup(props,ctx) {
             const route = useRoute()
             const killData = reactive({
-                mapName: '对局详情',
                 armsList: [
                     {
-                        url: require('../../../../assets/imgs/game/csgo/q2.png'),
+                        url: require('../../../assets/imgs/csgo/q2.png'),
                         type: 'win_round_16'
                     },
                     {
-                        url: require('../../../../assets/imgs/game/csgo/q.png'),
+                        url: require('../../../assets/imgs/csgo/q.png'),
                         type: 'first_to_5_rounds_wins'
                     },
                     {
-                        url: require('../../../../assets/imgs/game/csgo/q1.png'),
+                        url: require('../../../assets/imgs/csgo/q1.png'),
                         type: 'win_round_1'
                     }
                 ],
@@ -300,9 +297,6 @@
                 getbattleDetail,
                 gotoLink
             }
-        },
-        components: {
-            TitleView: defineAsyncComponent(() => import('@/components/common/title/title')) // 页面标题
         }
     })
 </script>
@@ -314,30 +308,12 @@
     @die: #303030;
     .play-kill {
         .map {
-            width: 100%;
-            height: 160px;
-            padding: 15px;
-            box-sizing: border-box;
-            background-color: #E3E5E8;
             .arms {
-                margin: 0 110px; 
-                position: relative;
-                &::after {
-                    content: '';
-                    height: 1px;
-                    width: 280px;
-                    display: block;
-                    background-color: #CACCCF;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                }
                 div {
                     width: 20px;
                     height: 20px;
-                    margin: 0 8px;
                     z-index: 999;
+                    margin: 5px 0;
                     &.back {
                         background-color: #CACCCF;
                     }
@@ -380,21 +356,28 @@
                     font-weight: 600;
                 }
                 img {
-                    width: 240px;
-                    height: 130px;
+                    width: 180px;
+                    height: 100px;
                     margin: 0 30px;
-                    border-radius: 1px;
+                    border-radius: 5px;
                 }
             }
         }
         .kill {
-            padding: 15px;
-            margin-top: 7px;
+            width:100%;
+            padding: 20px;
+            overflow: auto;
             background-color: #E3E5E8;
             table {
                 width: 100%;
                 height: 150px;
+                table-layout: fixed;
                 border-collapse: collapse;
+                td:first-child {
+                    z-index: 999;
+                    position:sticky;
+                    left:0;
+                }
                 tr {
                     border-bottom: 1px solid #CECECE;
                     &:last-child {
@@ -441,21 +424,20 @@
                 }
             }
             .team {
-                cursor: pointer;
                 img {
                     width: 35px;
                     height: 35px;
                     margin-right: 10px;
                 }
                 p {
-                    width: 90px;
+                    width: 60px;
                     color: #333;
                     font-size: 18px;
                 }
                 i {
                     width: 32px;
                     height: 18px;
-                    background: url('../../../../assets/imgs/game/csgo/win.png') no-repeat 0 0;
+                    background: url('../../../assets/imgs/csgo/win.png') no-repeat 0 0;
                     background-size: 100%;
                 }
             }
@@ -507,12 +489,6 @@
                         color: #DC0000;
                     }
                 }
-            }
-            .hide {
-                color: #999;
-                padding: 5px 15px;
-                border-radius: 13px;
-                background-color: #D2D2D2;
             }
         }
     }
