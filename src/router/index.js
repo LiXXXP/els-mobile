@@ -51,7 +51,15 @@ const routes = [
             title: '战队详情'
         },
         component: () => import('@/components/mean/detail')
-    }
+    },
+    {
+        path: '/match/game',
+        name: 'game',
+        meta: {
+            title: '比赛详情'
+        },
+        component: () => import('@/components/game/index')
+    },
 ]
 
 const router = createRouter({

@@ -140,7 +140,7 @@
                 }
                 .img {
                     height: 150px;
-                    background: linear-gradient(0deg, #77767D 0%, #F2F2F2 100%);
+                    background: linear-gradient(0deg, #D6D8E2 0%, #F7F7F7 100%);
                     position: relative;
                     i {
                         width: 44px;
