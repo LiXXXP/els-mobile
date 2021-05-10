@@ -2,7 +2,7 @@
     <div class="play-analy">
         <p class="title">对局详情</p>
         <div class="analy flex flex_only_center flex_wrap" v-if="battleList.length>0">
-            <div :class="['nav flex flex_only_center',{active: currentIndex === index}]" 
+            <div :class="['nav flex flex_center',{active: currentIndex === index}]" 
                 v-for="(item,index) in battleList" 
                 :key="item.battle_id"
                 @click="getBattleId(index,item.battle_id)">
@@ -79,7 +79,8 @@
                 img {
                     width: 26px;
                     height: 26px;
-                    padding: 0 5px;
+                    margin-left: -15px;
+                    margin-right: 5px;
                 }
                 p {
                     font-size: 16px;

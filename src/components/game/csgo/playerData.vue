@@ -10,8 +10,8 @@
                             <p class="beyond-ellipsis">{{item.team_name}}</p>
                         </div>
                     </th>
-                    <th>击杀(爆头击杀)</th>
-                    <th>助攻(闪光弹助攻)</th>
+                    <th>爆头击杀</th>
+                    <th>闪光弹助攻</th>
                     <th>死亡</th>
                     <th>KAST</th>
                     <th>K-D Diff</th>
@@ -142,7 +142,7 @@
         .team {
             cursor: pointer;
             p {
-                width: 60px;
+                width: 50px;
             }
         }
     }

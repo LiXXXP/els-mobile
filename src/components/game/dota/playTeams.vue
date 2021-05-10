@@ -19,112 +19,93 @@
                 </div>
             </div>
             <div class="type flex flex_between flex_only_start" v-if="teamInfo.length>0">
-                <div class="blue flex flex_only_center flex_wrap">
-                    <p v-if="firstEvents.first_blood.faction === 'blue'">一血</p>
-                    <p v-if="firstEvents.first_to_5_kills.faction === 'blue'">先五杀</p>
-                    <p v-if="firstEvents.first_to_10_kills.faction === 'blue'">先十杀</p>
-                    <p v-if="firstEvents.first_dragon.faction === 'blue'">首元素巨龙</p>
-                    <p v-if="firstEvents.first_turret.faction === 'blue'">首塔</p>
-                    <p v-if="firstEvents.first_rift_herald.faction === 'blue'">首峡谷先锋</p>
-                    <p v-if="firstEvents.first_inhibitor.faction === 'blue'">首水晶</p>
-                    <p v-if="firstEvents.first_baron_nashor.faction === 'blue'">首纳什男爵</p>
+                <div class="radiant flex flex_only_center flex_wrap">
+                    <p v-if="firstEvents.first_blood && firstEvents.first_blood.faction === 'radiant'">一血</p>
+                    <p v-if="firstEvents.first_to_5_kills && firstEvents.first_to_5_kills.faction === 'radiant'">先五杀</p>
+                    <p v-if="firstEvents.first_to_10_kills && firstEvents.first_to_10_kills.faction === 'radiant'">先十杀</p>
+                    <p v-if="firstEvents.first_barracks && firstEvents.first_barracks.faction === 'radiant'">首兵营</p>
+                    <p v-if="firstEvents.first_tower && firstEvents.first_tower.faction === 'radiant'">首塔</p>
+                    <p v-if="firstEvents.first_roshan && firstEvents.first_roshan.faction === 'radiant'">首肉山</p>
                 </div>
-                <div class="red flex flex_only_center flex_wrap">
-                    <p v-if="firstEvents.first_blood.faction === 'red'">一血</p>
-                    <p v-if="firstEvents.first_to_5_kills.faction === 'red'">先五杀</p>
-                    <p v-if="firstEvents.first_to_10_kills.faction === 'red'">先十杀</p>
-                    <p v-if="firstEvents.first_dragon.faction === 'red'">首元素巨龙</p>
-                    <p v-if="firstEvents.first_turret.faction === 'red'">首塔</p>
-                    <p v-if="firstEvents.first_rift_herald.faction === 'red'">首峡谷先锋</p>
-                    <p v-if="firstEvents.first_inhibitor.faction === 'red'">首水晶</p>
-                    <p v-if="firstEvents.first_baron_nashor.faction === 'red'">首纳什男爵</p>
-                </div>
-            </div>
-            <div class="gold">
-                <div class="title">经济</div>
-                <div class="flex flex_between flex_only_center">
-                    <p>{{thousands(factions[0].gold)}}</p>
-                    <p>{{thousands(factions[1].gold)}}</p>
-                </div>
-                <div class="bar flex flex_between flex_only_center">
-                    <div class="list blue" :style="{'width': `${710/(factions[0].gold + factions[1].gold)*factions[0].gold}%`}"></div>
-                    <div class="list red" :style="{'width': `${710/(factions[0].gold + factions[1].gold)*factions[1].gold}%`}"></div>
-                </div>
-                <div class="flex flex_between flex_only_center">
-                    <p>{{parseInt((factions[0].gold/(factions[0].gold + factions[1].gold))*100)}}%</p>
-                    <p>{{parseInt((factions[1].gold/(factions[0].gold + factions[1].gold))*100)}}%</p>
+                <div class="dire flex flex_only_center flex_wrap">
+                    <p v-if="firstEvents.first_blood && firstEvents.first_blood.faction === 'dire'">一血</p>
+                    <p v-if="firstEvents.first_to_5_kills && firstEvents.first_to_5_kills.faction === 'dire'">先五杀</p>
+                    <p v-if="firstEvents.first_to_10_kills && firstEvents.first_to_10_kills.faction === 'dire'">先十杀</p>
+                    <p v-if="firstEvents.first_dragon && firstEvents.first_dragon.faction === 'dire'">首元素巨龙</p>
+                    <p v-if="firstEvents.first_turret && firstEvents.first_turret.faction === 'dire'">首塔</p>
+                    <p v-if="firstEvents.first_rift_herald && firstEvents.first_rift_herald.faction === 'dire'">首峡谷先锋</p>
                 </div>
             </div>
             <div class="out flex flex_between flex_only_center">
                 <div class="flex flex_only_center">
                     <div class="icon flex flex_only_center">
-                        <img src="../../../assets/imgs/icon04.png">
-                        <p>{{factions[0].turret_kills}}</p>
+                        <img src="../../../assets/imgs/dota01.png">
+                        <p>{{factions[0].tower_kills}}</p>
                     </div>
                     <div class="icon flex flex_only_center">
-                        <img src="../../../assets/imgs/icon05.png">
-                        <p>{{factions[0].baron_nashor_kills}}</p>
+                        <img src="../../../assets/imgs/dota02.png">
+                        <p>{{factions[0].melee_barrack_kills}}</p>
                     </div>
                     <div class="icon flex flex_only_center">
-                        <img src="../../../assets/imgs/icon06.png">
-                        <p>{{factions[0].inhibitor_kills}}</p>
+                        <img src="../../../assets/imgs/dota03.png">
+                        <p>{{factions[0].ranged_barrack_kills}}</p>
                     </div>
                     <div class="icon flex flex_only_center">
-                        <img src="../../../assets/imgs/icon07.png">
-                        <p>{{factions[0].dragon_kills}}</p>
+                        <img src="../../../assets/imgs/dota04.png">
+                        <p>{{factions[0].roshan_kills}}</p>
                     </div>
                 </div>
                 <div class="flex flex_only_center">
                     <div class="icon flex flex_only_center">
-                        <img src="../../../assets/imgs/icon04.png">
-                        <p>{{factions[1].turret_kills}}</p>
+                        <img src="../../../assets/imgs/dota01.png">
+                        <p>{{factions[1].tower_kills}}</p>
                     </div>
                     <div class="icon flex flex_only_center">
-                        <img src="../../../assets/imgs/icon05.png">
-                        <p>{{factions[1].baron_nashor_kills}}</p>
+                        <img src="../../../assets/imgs/dota02.png">
+                        <p>{{factions[1].melee_barrack_kills}}</p>
                     </div>
                     <div class="icon flex flex_only_center">
-                        <img src="../../../assets/imgs/icon06.png">
-                        <p>{{factions[1].inhibitor_kills}}</p>
+                        <img src="../../../assets/imgs/dota03.png">
+                        <p>{{factions[1].ranged_barrack_kills}}</p>
                     </div>
                     <div class="icon flex flex_only_center">
-                        <img src="../../../assets/imgs/icon07.png">
-                        <p>{{factions[1].dragon_kills}}</p>
+                        <img src="../../../assets/imgs/dota04.png">
+                        <p>{{factions[1].roshan_kills}}</p>
                     </div>
                 </div>
             </div>
             <div class="hero" v-if="factions.length>0">
                 <div class="flex flex_between flex_only_center" v-if="factions[0].ban.length>0">
-                    <div class="small flex flex_only_center">
+                    <div class="ban flex flex_only_center">
                         <img v-for="item in factions[0].ban" 
-                            :key="item.champion_name"
-                            :src="item.champion_image" 
-                            :title="item.champion_name"
+                            :key="item.hero_name"
+                            :src="item.hero_image" 
+                            :title="item.hero_name"
                         >
                     </div>
                     <p>BAN</p>
-                    <div class="small flex flex_end">
+                    <div class="ban flex flex_end">
                         <img v-for="item in factions[1].ban" 
-                            :key="item.champion_name"
-                            :src="item.champion_image" 
-                            :title="item.champion_name"
+                            :key="item.hero_name"
+                            :src="item.hero_image" 
+                            :title="item.hero_name"
                         >
                     </div>
                 </div>
                 <div class="flex flex_between flex_only_center" v-if="factions[0].pick.length>0">
-                    <div class="small flex flex_only_center">
+                    <div class="pick flex flex_only_center">
                         <img v-for="item in factions[0].pick" 
-                            :key="item.champion_name"
-                            :src="item.champion_image" 
-                            :title="item.champion_name"
+                            :key="item.hero_name"
+                            :src="item.hero_image" 
+                            :title="item.hero_name"
                         >
                     </div>
                     <p>PICK</p>
-                    <div class="small flex flex_end">
+                    <div class="pick flex flex_end">
                         <img v-for="item in factions[1].pick" 
-                            :key="item.champion_name"
-                            :src="item.champion_image" 
-                            :title="item.champion_name"
+                            :key="item.hero_name"
+                            :src="item.hero_image" 
+                            :title="item.hero_name"
                         >
                     </div>
                 </div>
@@ -171,7 +152,7 @@
                             teamsData.firstEvents = res.data.battle_detail.first_events
                             teamsData.status = res.data.status
 
-                            if(res.data.battle_detail.factions[0].faction !== 'blue') {
+                            if(res.data.battle_detail.factions[0].faction !== 'radiant') {
                                 teamsData.factions.reverse()
                             }
 
@@ -268,14 +249,14 @@
                         border-radius: 5px;
                     }
                 }
-                .blue {
+                .radiant {
                     p {
-                        background-color: #467CF3;
+                        background-color: #1FA262;
                     }
                 }
-                .red {
+                .dire {
                     p {
-                        background-color: #FF4645;
+                        background-color: #DE5347;
                     }
                 }
             }
@@ -294,13 +275,13 @@
                         box-sizing: border-box;
                         transition: width .3s linear;
                         position: relative;
-                        &.blue {
+                        &.radiant {
                             border-radius: 12px 0 0 12px;
-                            background-color: #457CF4;
+                            background-color: #1FA262;
                         }
-                        &.red {
+                        &.dire {
                             border-radius: 0 12px 12px 0;
-                            background-color: #FF4645;
+                            background-color: #DE5347;
                         }
                     }
                 }
@@ -327,12 +308,25 @@
                     color: #666;
                     font-size: 18px;
                 }
-                .small {
+                .ban {
                     margin: 7px 0;
                     img {
-                        width: 60px;
-                        height: 60px;
+                        width: 42px;
+                        height: 40px;
                         margin-right: 5px;
+                        border-radius: 5px;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                .pick {
+                    margin: 7px 0;
+                    img {
+                        width: 61px;
+                        height: 40px;
+                        margin-right: 5px;
+                        border-radius: 5px;
                         &:last-child {
                             margin-right: 0;
                         }
