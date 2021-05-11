@@ -124,7 +124,6 @@
         }
         table {
             width: 100%;
-            font-size: 18px;
             margin-bottom: 10px;
             box-sizing: border-box;
             background-color: #E3E5E8;
@@ -144,7 +143,7 @@
             td {
                 height: 60px;
                 color: #666;
-                font-size: 14px;
+                font-size: 20px;
                 text-align: center;
                 border-top: 1px solid #D5D7DB;
             }

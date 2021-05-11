@@ -183,6 +183,8 @@
                 if(index === 2) {
                     selectTeamId.value = teamId
                 }
+                selectData.screenList = []
+                selectData.page.current = 0
                 getMatchScreen()
             }
 
@@ -201,6 +203,8 @@
                 if(index === 2) {
                     selectTeamId.value = undefined
                 }
+                selectData.screenList = []
+                selectData.page.current = 0
                 getMatchScreen()
             }
 
