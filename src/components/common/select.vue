@@ -85,6 +85,7 @@
             font-size: 24px;
             position: relative;
             .select {
+                color: #333;
                 padding: 0 10px;
                 border-radius: 5px;
                 box-sizing: border-box;
@@ -98,7 +99,7 @@
                     margin-top:-4px;
                     border: 8px solid #929497;
                     border-width: 8px 5px 8px;
-                    border-color: #000 transparent transparent transparent;
+                    border-color: #333 transparent transparent transparent;
                     pointer-events:none;
                     position: absolute;
                     top: 50%;
@@ -108,8 +109,7 @@
                     border: 0;
                     width: 90%;
                     height: 100%;
-                    color: #000;
-                    cursor: pointer;
+                    color: #333;
                     font-weight: 600;
                     background-color: #DADADA;
                 }

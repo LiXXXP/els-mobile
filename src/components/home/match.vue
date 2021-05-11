@@ -315,11 +315,11 @@
         }
         .event {
             .list {
-                height: 190px;
-                padding: 20px 0;
+                padding: 25px 0;
                 box-sizing: border-box;
                 border-bottom: 1px solid #D0D0D0;
                 .game {
+                    padding-bottom: 20px;
                     img {
                         width: 25px;
                         height: 25px;
@@ -327,7 +327,7 @@
                     }
                     p {
                         color: #666;
-                        font-size: 24px;
+                        font-size: 22px;
                     }
                 }
                 .team {

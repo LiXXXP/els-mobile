@@ -1,6 +1,6 @@
 <template>
     <div class="slider">
-        <div class="cont">
+        <div class="cont flex flex_nowrap flex_only_center">
             <div class="block" v-for="item in shortList" :key="item.match_id">
                 <div :class="['title flex flex_between',{
                     ongoing: item.status === '比赛进行中'
@@ -99,22 +99,21 @@
 <style lang="less" scoped>
     @green: #01FE9B;
     .slider {
-        padding: 30px 0;
+        width: 100%;
         .cont {
-            max-width: 100%;
-            overflow-x: auto;
+            // width: 100%;
+            height: 250px;
+            overflow-x: scroll;
             overflow-y: hidden;
             white-space: nowrap;
             .block {
-                width: 300px;
+                flex: 0 0 300px;
                 height: 190px;
-                cursor: pointer;
-                margin-right: 22px;
-                margin-bottom: 20px;
+                overflow: hidden;
+                margin-right: 20px;
                 border-radius: 5px;
-                display: inline-block;
                 background: linear-gradient(180deg, #E5E5E5 1%, #F3F3F3 100%);
-                box-shadow: 0px 3px 21px 0px rgba(125, 125, 125, 0.3);
+                box-shadow: 0px 3px 20px 0px rgba(125, 125, 125, 0.3);
                 .title {
                     width: 100%;
                     height: 30px;
@@ -189,6 +188,5 @@
                 }
             }
         }
-        
     }
 </style>
