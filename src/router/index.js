@@ -27,6 +27,14 @@ const routes = [
                 component: () => import('@/components/match/index')
             },
             {
+                path: '/match/detail',
+                name: 'matchDetail',
+                meta: {
+                    title: '赛事详情'
+                },
+                component: () => import('@/components/match/detail')
+            },
+            {
                 path: '/mean',
                 name: 'mean',
                 meta: {
@@ -34,23 +42,15 @@ const routes = [
                 },
                 component: () => import('@/components/mean/index')
             },
+            {
+                path: '/mean/detail',
+                name: 'meanDetail',
+                meta: {
+                    title: '战队详情'
+                },
+                component: () => import('@/components/mean/detail')
+            },
         ]
-    },
-    {
-        path: '/match/detail',
-        name: 'meanDetail',
-        meta: {
-            title: '赛事详情'
-        },
-        component: () => import('@/components/match/detail')
-    },
-    {
-        path: '/mean/detail',
-        name: 'meanDetail',
-        meta: {
-            title: '战队详情'
-        },
-        component: () => import('@/components/mean/detail')
     },
     {
         path: '/match/game',
@@ -59,7 +59,7 @@ const routes = [
             title: '比赛详情'
         },
         component: () => import('@/components/game/index')
-    },
+    }
 ]
 
 const router = createRouter({

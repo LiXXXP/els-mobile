@@ -11,6 +11,7 @@
 
 <script>
     import { defineComponent, reactive, toRefs } from 'vue'
+    import { onBeforeRouteUpdate } from "vue-router"
     
     export default defineComponent({
         setup(props,ctx) {
@@ -33,19 +34,18 @@
                 toPath: '/home'
             })
 
+            onBeforeRouteUpdate( to => {
+                navData.toPath = to.path
+                if(to.path === '/match/detail') {
+                    navData.toPath = '/match'
+                }
+                if(to.path === '/mean/detail') {
+                    navData.toPath = '/mean'
+                }
+            })
+
             return {
                 ...toRefs(navData)
-            }
-        },
-        watch: {
-            $route (to, from) {
-                this.toPath = to.path
-                if (to.path === '/match/detail') {
-                    this.toPath = '/match'
-                }
-                if (to.path === '/mean/detail') {
-                    this.toPath = '/mean'
-                }
             }
         }
     })

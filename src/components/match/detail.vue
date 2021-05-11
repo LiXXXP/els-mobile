@@ -1,6 +1,5 @@
 <template>
     <div class="detail">
-        <HeaderView />
         <div class="card">
             <div class="top flex flex_only_center">
                 <img :src="tournamentDetail.tournament_logo">
@@ -43,7 +42,7 @@
 
 <script>
 
-    import { defineComponent, defineAsyncComponent, reactive, toRefs, onMounted } from 'vue'
+    import { defineComponent, reactive, toRefs, onMounted } from 'vue'
     import { useRoute, onBeforeRouteUpdate } from "vue-router"
     import { tournamentDetail } from "@/scripts/request"
 
@@ -83,16 +82,12 @@
             return {
                 ...toRefs(detailData)
             }
-        },
-        components: {
-            HeaderView: defineAsyncComponent(() => import('@/components/header/nav')), // 导航栏
         }
     })
 </script>
 
 <style lang="less" scoped>
     .detail {
-        padding: 20px;
         .card {
             width: 710px;
             height: 330px;

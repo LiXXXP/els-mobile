@@ -1,5 +1,6 @@
 <template>
     <div class="mean">
+        <SwipeView />
         <div class="gamelist flex flex_only_center flex_wrap">
             <div v-for="item in gameList" :key="item.game_id">
                 <img :src="item.image" @click="selectMatch(item.game_id)">
@@ -25,7 +26,7 @@
 
 <script>
 
-    import { defineComponent, reactive, toRefs, onMounted } from 'vue'
+    import { defineComponent, defineAsyncComponent, reactive, toRefs, onMounted } from 'vue'
     import { useRouter } from "vue-router"
     import { List } from 'vant'
     import { gameList, teamList } from "@/scripts/request"
@@ -105,7 +106,8 @@
 
         },
         components: {
-            [List.name]: List
+            [List.name]: List,
+            SwipeView: defineAsyncComponent(() => import('@/components/home/swipe'))
         }
     })
 </script>

@@ -1,7 +1,6 @@
 <template>
     <div class="index">
         <HeaderView />
-        <SwipeView />
         <!-- 路由页面 -->
         <router-view></router-view>
     </div>
@@ -16,8 +15,7 @@
             
         },
         components: {
-            HeaderView: defineAsyncComponent(() => import('@/components/header/nav')), // 导航栏
-            SwipeView: defineAsyncComponent(() => import('@/components/home/swipe')),
+            HeaderView: defineAsyncComponent(() => import('@/components/header/nav')) // 导航栏
         }
     })
 </script>

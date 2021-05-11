@@ -1,5 +1,6 @@
 <template>
     <div class="home">
+        <SwipeView />
         <SliderView />
         <MatchView />
     </div>
@@ -15,6 +16,7 @@
 
         },
         components: {
+            SwipeView: defineAsyncComponent(() => import('@/components/home/swipe')),
             SliderView: defineAsyncComponent(() => import('@/components/home/slider')),
             MatchView: defineAsyncComponent(() => import('@/components/home/match')),
         }
