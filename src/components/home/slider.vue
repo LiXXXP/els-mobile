@@ -99,9 +99,8 @@
 <style lang="less" scoped>
     @green: #01FE9B;
     .slider {
-        width: 100%;
         .cont {
-            // width: 100%;
+            width: 100%;
             height: 250px;
             overflow-x: scroll;
             overflow-y: hidden;

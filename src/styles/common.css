@@ -5,7 +5,6 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 }
 
 body {
-    font-size: 16px;
     background-color: #E6E6E6;
     font-family: 'Microsoft YaHei','PingFangSC-Regular';
 }
@@ -93,30 +92,6 @@ button {
     z-index: 999;
     overflow: hidden;
     background: rgba(10, 10, 11, 0.84);
-}
-
-/* 使用全局样式 */
-* {
-    touch-action: pan-y;
-}
-
-/* 版心 */
-.page-content {
-    width: 1200px;
-    margin: 0 auto;
-}
-
-/*滚动条的宽度*/
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-/*滚动条的设置*/
-::-webkit-scrollbar-thumb {
-    background: rgba(140, 140, 140, .3);
-    border-radius: 5px;
 }
 
 /* flex布局 */
