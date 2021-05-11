@@ -34,6 +34,7 @@
                 </tbody>
             </table>
         </div>
+        <div class="none" v-else>敬请期待</div>
     </div>
 </template>
 

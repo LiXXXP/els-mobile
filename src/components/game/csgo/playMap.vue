@@ -1,7 +1,7 @@
 <template>
     <div class="play-map">
         <div class="title">地图信息</div>
-        <div class="info">
+        <div class="info" v-if="mapInfo.length > 0">
             <div class="map-tab flex flex_end">
                 <div v-for="(item,index) in mapNav"
                     :key="item.name"
@@ -26,6 +26,7 @@
                     :src="item.map_thumbnail">
             </div>
         </div>
+        <div class="none" v-else>敬请期待</div>
     </div>
 </template>
 
