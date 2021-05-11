@@ -298,8 +298,8 @@
                     color: #666;
                     margin: 0 40px;
                     cursor: pointer;
-                    font-size: 18px;
-                    font-weight: 500;
+                    font-size: 24px;
+                    font-weight: 600;
                     padding-bottom: 7px;
                     border-bottom: 3px solid transparent;
                     &:last-child {
@@ -327,7 +327,7 @@
                     }
                     p {
                         color: #666;
-                        font-size: 20px;
+                        font-size: 24px;
                     }
                 }
                 .team {
@@ -351,7 +351,7 @@
                     }
                     .time {
                         color: #666;
-                        font-size: 20px;
+                        font-size: 22px;
                         padding: 10px 0;
                     }
                     .detail {
@@ -359,6 +359,7 @@
                         height: 30px;
                         margin: 0 auto;
                         cursor: pointer;
+                        font-size: 24px;
                         line-height: 30px;
                         border-radius: 2px;
                         text-align: center;

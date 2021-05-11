@@ -118,8 +118,10 @@
                 .title {
                     width: 100%;
                     height: 30px;
-                    font-weight: 500;
+                    color: #fff;
+                    padding: 0 5px;
                     line-height: 30px;
+                    box-sizing: border-box;
                     background-color: #D1D1D1;
                     &.ongoing {
                         background-color: #B29873;
@@ -141,12 +143,15 @@
                     .flex {
                         margin-bottom: 15px;
                         .team {
+                            width: 50px;
                             img {
                                 width: 35px;
                                 height: 35px;
+                                display: block;
+                                margin: 0 auto;
                             }
                             p {
-                                width: 35px;
+                                font-size: 16px;
                                 font-weight: 600;
                                 margin-top: 10px;
                                 text-align: center;
@@ -158,11 +163,12 @@
                                 font-weight: 600;
                             }
                             .status {
-                                width: 85px;
-                                height: 20px;
+                                width: 100px;
+                                height: 25px;
+                                font-size: 16px;
                                 margin-top: 10px;
                                 color: #B29873;
-                                line-height: 20px;
+                                line-height: 25px;
                                 text-align: center;
                                 border-radius: 5px;
                                 border: 1px solid #B29873;
@@ -177,7 +183,7 @@
                         }
                     }
                     p {
-                        font-size: 12px;
+                        font-size: 14px;
                         text-align: center;
                     }
                 }

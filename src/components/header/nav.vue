@@ -57,7 +57,7 @@
         padding-bottom: 24px;
         .link {
             color: #333;
-            font-size: 30px;
+            font-size: 32px;
             line-height: 50px;
             margin-right: 90px;
             &.active {

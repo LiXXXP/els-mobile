@@ -123,7 +123,7 @@
         }
         table {
             width: 100%;
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 10px;
             box-sizing: border-box;
             background-color: #E3E5E8;

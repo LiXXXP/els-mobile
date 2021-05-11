@@ -82,10 +82,10 @@
 <style lang="less" scoped>
     .select {
         .custom {
+            font-size: 24px;
             position: relative;
             .select {
                 padding: 0 10px;
-                cursor: pointer;
                 border-radius: 5px;
                 box-sizing: border-box;
                 background-color: #DADADA;
@@ -98,7 +98,7 @@
                     margin-top:-4px;
                     border: 8px solid #929497;
                     border-width: 8px 5px 8px;
-                    border-color: #666 transparent transparent transparent;
+                    border-color: #000 transparent transparent transparent;
                     pointer-events:none;
                     position: absolute;
                     top: 50%;
@@ -108,7 +108,7 @@
                     border: 0;
                     width: 90%;
                     height: 100%;
-                    color: #666;
+                    color: #000;
                     cursor: pointer;
                     font-weight: 600;
                     background-color: #DADADA;
@@ -125,21 +125,17 @@
                 left: 0;
                 li {
                     color: #666;
-                    cursor: pointer;
                     padding-bottom: 10px;
-                    &:hover {
-                        color: #B29873;
-                    }
                 }
             }
             &.custom-small {
                 .select {
-                    width: 210px;
-                    height: 35px;
+                    width: 220px;
+                    height: 40px;
                 }
                 .option {
-                    width: 210px;
-                    top: 35px;
+                    width: 220px;
+                    top: 40px;
                 }
             }
         }
