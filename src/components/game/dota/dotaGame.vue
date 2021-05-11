@@ -18,7 +18,7 @@
 
             const gameData = inject('detail')
             watch(gameData, () => {
-                battleId.value = gameData.gameDetail.battle_info[0].battle_id
+                battleId.value = gameData.gameDetail.battle_info.length > 0 ? gameData.gameDetail.battle_info[0].battle_id : 0
             })
 
             const getBattleId = (val) => {

@@ -19,25 +19,25 @@
                 </div>
             </div>
             <div class="type flex flex_between flex_only_start" v-if="teamInfo.length>0">
-                <div class="blue flex flex_only_center flex_wrap">
-                    <p v-if="firstEvents.first_blood.faction === 'blue'">一血</p>
-                    <p v-if="firstEvents.first_to_5_kills.faction === 'blue'">先五杀</p>
-                    <p v-if="firstEvents.first_to_10_kills.faction === 'blue'">先十杀</p>
-                    <p v-if="firstEvents.first_dragon.faction === 'blue'">首元素巨龙</p>
-                    <p v-if="firstEvents.first_turret.faction === 'blue'">首塔</p>
-                    <p v-if="firstEvents.first_rift_herald.faction === 'blue'">首峡谷先锋</p>
-                    <p v-if="firstEvents.first_inhibitor.faction === 'blue'">首水晶</p>
-                    <p v-if="firstEvents.first_baron_nashor.faction === 'blue'">首纳什男爵</p>
+                <div class="blue flex flex_start flex_only_center flex_wrap">
+                    <p v-if="firstEvents.first_blood && firstEvents.first_blood.faction === 'blue'">一血</p>
+                    <p v-if="firstEvents.first_to_5_kills && firstEvents.first_to_5_kills.faction === 'blue'">先五杀</p>
+                    <p v-if="firstEvents.first_to_10_kills && firstEvents.first_to_10_kills.faction === 'blue'">先十杀</p>
+                    <p v-if="firstEvents.first_dragon && firstEvents.first_dragon.faction === 'blue'">首元素巨龙</p>
+                    <p v-if="firstEvents.first_turret && firstEvents.first_turret.faction === 'blue'">首塔</p>
+                    <p v-if="firstEvents.first_rift_herald && firstEvents.first_rift_herald.faction === 'blue'">首峡谷先锋</p>
+                    <p v-if="firstEvents.first_inhibitor && firstEvents.first_inhibitor.faction === 'blue'">首水晶</p>
+                    <p v-if="firstEvents.first_baron_nashor && firstEvents.first_baron_nashor.faction === 'blue'">首纳什男爵</p>
                 </div>
-                <div class="red flex flex_only_center flex_wrap">
-                    <p v-if="firstEvents.first_blood.faction === 'red'">一血</p>
-                    <p v-if="firstEvents.first_to_5_kills.faction === 'red'">先五杀</p>
-                    <p v-if="firstEvents.first_to_10_kills.faction === 'red'">先十杀</p>
-                    <p v-if="firstEvents.first_dragon.faction === 'red'">首元素巨龙</p>
-                    <p v-if="firstEvents.first_turret.faction === 'red'">首塔</p>
-                    <p v-if="firstEvents.first_rift_herald.faction === 'red'">首峡谷先锋</p>
-                    <p v-if="firstEvents.first_inhibitor.faction === 'red'">首水晶</p>
-                    <p v-if="firstEvents.first_baron_nashor.faction === 'red'">首纳什男爵</p>
+                <div class="red flex flex_end flex_only_center flex_wrap">
+                    <p v-if="firstEvents.first_blood && firstEvents.first_blood.faction === 'red'">一血</p>
+                    <p v-if="firstEvents.first_to_5_kills && firstEvents.first_to_5_kills.faction === 'red'">先五杀</p>
+                    <p v-if="firstEvents.first_to_10_kills && firstEvents.first_to_10_kills.faction === 'red'">先十杀</p>
+                    <p v-if="firstEvents.first_dragon && firstEvents.first_dragon.faction === 'red'">首元素巨龙</p>
+                    <p v-if="firstEvents.first_turret && firstEvents.first_turret.faction === 'red'">首塔</p>
+                    <p v-if="firstEvents.first_rift_herald && firstEvents.first_rift_herald.faction === 'red'">首峡谷先锋</p>
+                    <p v-if="firstEvents.first_inhibitor && firstEvents.first_inhibitor.faction === 'red'">首水晶</p>
+                    <p v-if="firstEvents.first_baron_nashor && firstEvents.first_baron_nashor.faction === 'red'">首纳什男爵</p>
                 </div>
             </div>
             <div class="gold">
@@ -130,7 +130,7 @@
                 </div>
             </div>
         </div>
-        <div class="none" v-else>暂无对局内容</div>
+        <div class="none" v-else>敬请期待</div>
     </div>
 </template>
 

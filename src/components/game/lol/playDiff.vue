@@ -1,7 +1,7 @@
 <template>
     <div class="play-diff">
         <div class="title">经验差/经济差</div>
-        <div class="chart">
+        <div class="chart" v-if="battleId">
             <div class="head flex flex_between">
                 <div class="right flex flex_only_center">
                     <p>
@@ -20,6 +20,7 @@
             </div>
             <div ref="echartRef" class="cont"></div>
         </div>
+        <div class="none" v-else>敬请期待</div>
     </div>
 </template>
 

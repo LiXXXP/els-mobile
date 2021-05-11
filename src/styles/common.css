@@ -228,3 +228,7 @@ button {
 }
 
 /*字体图标*/
+.none {
+    text-align: center;
+    padding-bottom: 20px;
+}

@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="type flex flex_between flex_only_start" v-if="teamInfo.length>0">
-                <div class="radiant flex flex_only_center flex_wrap">
+                <div class="radiant flex flex_start flex_only_center flex_wrap">
                     <p v-if="firstEvents.first_blood && firstEvents.first_blood.faction === 'radiant'">一血</p>
                     <p v-if="firstEvents.first_to_5_kills && firstEvents.first_to_5_kills.faction === 'radiant'">先五杀</p>
                     <p v-if="firstEvents.first_to_10_kills && firstEvents.first_to_10_kills.faction === 'radiant'">先十杀</p>
@@ -27,7 +27,7 @@
                     <p v-if="firstEvents.first_tower && firstEvents.first_tower.faction === 'radiant'">首塔</p>
                     <p v-if="firstEvents.first_roshan && firstEvents.first_roshan.faction === 'radiant'">首肉山</p>
                 </div>
-                <div class="dire flex flex_only_center flex_wrap">
+                <div class="dire flex flex_end flex_only_center flex_wrap">
                     <p v-if="firstEvents.first_blood && firstEvents.first_blood.faction === 'dire'">一血</p>
                     <p v-if="firstEvents.first_to_5_kills && firstEvents.first_to_5_kills.faction === 'dire'">先五杀</p>
                     <p v-if="firstEvents.first_to_10_kills && firstEvents.first_to_10_kills.faction === 'dire'">先十杀</p>
@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div class="none" v-else>暂无对局内容</div>
+        <div class="none" v-else>敬请期待</div>
     </div>
 </template>
 

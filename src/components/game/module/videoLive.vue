@@ -43,7 +43,7 @@
                 liveStreaming(params).then(res => {
                     if(res.code === 200) {
                         streamData.list = res.data.stream_list
-                        streamData.embedUrl = res.data.stream_list[0].embed_url
+                        streamData.embedUrl = res.data.stream_list.length > 0 ? res.data.stream_list[0].embed_url : ''
                     }
                 })
             }
