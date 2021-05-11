@@ -364,20 +364,13 @@
             }
         }
         .kill {
-            width:100%;
-            padding: 20px;
+            margin: 20px 0;
             overflow: auto;
-            background-color: #E3E5E8;
             table {
                 width: 100%;
                 height: 150px;
                 table-layout: fixed;
-                border-collapse: collapse;
-                td:first-child {
-                    z-index: 999;
-                    position:sticky;
-                    left:0;
-                }
+                background-color: #E3E5E8;
                 tr {
                     border-bottom: 1px solid #CECECE;
                     &:last-child {
@@ -386,7 +379,12 @@
                     td {
                         width: 32px;
                         &:first-child {
-                            width: 16%;
+                            width: 150px;
+                            background-color: #E3E5E8;
+                            border-bottom: 1px solid #CECECE;
+                            position: sticky;
+                            left: 0;
+                            z-index: 999;
                         }
                         &:first-child,
                         &:nth-child(16){
