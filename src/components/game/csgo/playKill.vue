@@ -364,7 +364,7 @@
             }
         }
         .kill {
-            margin: 20px 0;
+            padding: 20px 0;
             overflow: auto;
             table {
                 width: 100%;
@@ -381,7 +381,6 @@
                         &:first-child {
                             width: 150px;
                             background-color: #E3E5E8;
-                            border-bottom: 1px solid #CECECE;
                             position: sticky;
                             left: 0;
                             z-index: 999;
