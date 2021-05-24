@@ -173,7 +173,7 @@
                     line-height: 50px;
                     box-sizing: border-box;
                     border-radius: 0 0 10px 10px;
-                    background-color: #3C3C3C;
+                    background-color: #B29873;
                 }
             }
         }
