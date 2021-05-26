@@ -11,6 +11,17 @@
 
     export default defineComponent({
         name: 'home',
+        metaInfo: {
+            title: '电竞比分网', // set a title
+            meta: [{                 // set meta
+              name: 'keyWords',
+              content: '电竞比分网 - eSportLiveScore.cn|实时比分直播|比赛日程|比赛结果|历史数据'
+            }],
+            link: [{                 // set link
+              rel: 'asstes',
+              href: 'http://m.esportlivescore.cn/'
+            }]
+        },
         setup() {
             
         },

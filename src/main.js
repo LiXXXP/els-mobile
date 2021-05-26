@@ -21,4 +21,7 @@ Es6Promise.polyfill()
 const Vue = createApp(App)
 Vue.use(router)
 
+import MetaInfo from 'vue-meta-info'
+Vue.use(MetaInfo)
+
 Vue.mount('#app')

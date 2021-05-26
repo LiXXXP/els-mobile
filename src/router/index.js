@@ -5,49 +5,31 @@ const routes = [
         path: '/',
         name: 'index',
         redirect: '/home',
-        meta: {
-            title: '首页',
-        },
         component: () => import('@/components/index'),
         children: [
             {
                 path: '/home',
                 name: 'home',
-                meta: {
-                    title: '首页'
-                },
                 component: () => import('@/components/home/index')
             },
             {
                 path: '/match',
                 name: 'match',
-                meta: {
-                    title: '赛事'
-                },
                 component: () => import('@/components/match/index')
             },
             {
                 path: '/match/detail',
                 name: 'matchDetail',
-                meta: {
-                    title: '赛事详情'
-                },
                 component: () => import('@/components/match/detail')
             },
             {
                 path: '/mean',
                 name: 'mean',
-                meta: {
-                    title: '战队'
-                },
                 component: () => import('@/components/mean/index')
             },
             {
                 path: '/mean/detail',
                 name: 'meanDetail',
-                meta: {
-                    title: '战队详情'
-                },
                 component: () => import('@/components/mean/detail')
             },
         ]
@@ -55,9 +37,6 @@ const routes = [
     {
         path: '/match/game',
         name: 'game',
-        meta: {
-            title: '比赛详情'
-        },
         component: () => import('@/components/game/index')
     }
 ]
