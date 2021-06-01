@@ -47,18 +47,18 @@ const router = createRouter({
     routes
 })
 
-router.beforeEach((to, from, next) => {
+// router.beforeEach((to, from, next) => {
 
-    if(isMobile(true)) {
-        if(window.location.host !== 'm.esportlivescore.cn') {
-            window.location.href = 'https://m.esportlivescore.cn/#/home'
-        } else {
-            next()
-        }
-    } else {
-        window.location.href = 'https://esportlivescore.cn/#/index'
-    }
+//     // if(isMobile(true)) {
+//     //     if(window.location.host !== 'm.esportlivescore.cn') {
+//     //         window.location.href = 'https://m.esportlivescore.cn/#/home'
+//     //     } else {
+//     //         next()
+//     //     }
+//     // } else {
+//     //     window.location.href = 'https://esportlivescore.cn/#/index'
+//     // }
 
-})
+// })
 
 export default router

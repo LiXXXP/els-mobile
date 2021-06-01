@@ -4,14 +4,10 @@ let environmentVar = '';
 let sparkUrlVar = ''// 接口地址
 let basePathVar = ''// history模式下的路径后缀
 
-environmentVar = '复刻'
-// environmentVar = '极速'
+environmentVar = '开发'
 
-if(environmentVar === '复刻') {
-    sparkUrlVar = 'https://sapi.esport.beer'
-    basePathVar = '/'
-} else if(environmentVar === '极速') {
-    sparkUrlVar = 'https://tools.esport.beer'
+if(environmentVar === '开发') {
+    sparkUrlVar = 'https://api.esportlivescore.cn'
     basePathVar = '/'
 }
 
